@@ -22,6 +22,7 @@
        {:row 12, :col 16, :file "corpus/inline_def.clj"}
        {:row 14, :col 18, :file "corpus/inline_def.clj"})
      row-col-files)
+    (is (= 1 0))
     (is (= #{"inline def"} (set (map :message linted)))))
   (doseq [lang [:clj :cljs]]
     (is (empty? (lint! "(defmacro foo [] `(def x 1))" "--lang" (name lang))))
